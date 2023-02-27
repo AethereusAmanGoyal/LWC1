@@ -3,7 +3,7 @@ import showObject from '@salesforce/apex/ShowObjectName.showObject';
 export default class SelectObject extends LightningElement {
 
 @track options;
-@track temp='';
+@track objName='';
 @track handleobjectapi=false;
 
  @wire(showObject)
@@ -23,7 +23,7 @@ export default class SelectObject extends LightningElement {
  }
  handleChange(event){
      this.handleobjectapi = true;
-     this.temp = event.detail.value;
-     console.log('this.temp'+this.temp);
+     this.objName = event.detail.value;
+     console.log('objectName'+this.objName);
  }
 }

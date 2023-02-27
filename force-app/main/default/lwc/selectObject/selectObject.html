@@ -1,7 +1,7 @@
 <template>
     <lightning-card  >
      <lightning-combobox
-         name="progress"
+         name="List Of Object"
          label="Select Object"
          value={value}
          placeholder="Select your object......."
@@ -11,10 +11,10 @@
     <div class="slds-grid slds-gutters">
         <template if:true={handleobjectapi}>
             <div class="slds-col">
-            <c-object-form obj={temp}></c-object-form>
+            <c-object-form obj={objName}></c-object-form>
             </div>
             <div class="slds-col">
-            <c-object-list obj={temp}></c-object-list>
+            <c-object-list obj={objName}></c-object-list>
             </div>
         </template>
     </div>

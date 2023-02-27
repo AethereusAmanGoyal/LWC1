@@ -9,29 +9,22 @@ export default class ObjectForm extends LightningElement {
 @api recordTypeId ;
 
 
- myFields = [NAME_FIELD, PHONE_FIELD];
+ objFields = [NAME_FIELD, PHONE_FIELD];
 
  @wire(getObjectInfo, { objectApiName: '$obj' })
 handleObjectInfo({error, data}) {
     if (data) {
-        console.log('this.obj--'+this.obj);
-      console.log('data objectApi --'+JSON.stringify(data));
         this.recordTypeId = data.defaultRecordTypeId;
-        console.log('this.recordTypeId---'+this.recordTypeId);
-    }
+      }
     else if(error){
        console.log(error);
    }
    }
 
-   handleAccountCreated(){
-  // if(this.obj === 'Account'){
-  //   console.log('Inside if condition');
-  //   }
-
+   handleRecordCreated(){
     const evt = new ShowToastEvent({
       title: 'Record Created',
-      // message: this.message,
+      message:'Record from the form is been created',
       variant: 'success',
   });
   this.dispatchEvent(evt);
